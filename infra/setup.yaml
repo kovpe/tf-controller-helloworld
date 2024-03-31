@@ -23,7 +23,7 @@ spec:
   interval: 1m
   sourceRef:
     kind: GitRepository
-    name: helloworld-tf
+    name: helloworld
     namespace: test
   writeOutputsToSecret:
     name: helloworld-outputs
