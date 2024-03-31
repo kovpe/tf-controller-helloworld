@@ -3,11 +3,13 @@ apiVersion: source.toolkit.fluxcd.io/v1beta1
 kind: GitRepository
 metadata:
   name: helloworld-tf
+  namespace: test
 spec:
   interval: 1m
-  url: https://github.com/kovpe/tf-controller-helloworld
+  url: ssh://github.com/kovpe/tf-controller-helloworld
   ref:
     branch: main
+  secretRef: github-ssh
 ---
 apiVersion: infra.contrib.fluxcd.io/v1alpha1
 kind: Terraform
@@ -20,5 +22,6 @@ spec:
   sourceRef:
     kind: GitRepository
     name: helloworld-tf
+    namespace: test
   writeOutputsToSecret:
     name: helloworld-outputs
