@@ -9,7 +9,8 @@ spec:
   url: ssh://github.com/kovpe/tf-controller-helloworld
   ref:
     branch: main
-  secretRef: github-ssh
+  secretRef: 
+    name: github-ssh
 ---
 apiVersion: infra.contrib.fluxcd.io/v1alpha1
 kind: Terraform
