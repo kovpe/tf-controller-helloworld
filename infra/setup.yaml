@@ -18,7 +18,7 @@ metadata:
   namespace: test
 spec:
   path: ./terraform
-  approvePlan: ""
+  approvePlan: auto
   interval: 1m
   sourceRef:
     kind: GitRepository
