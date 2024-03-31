@@ -15,6 +15,7 @@ apiVersion: infra.contrib.fluxcd.io/v1alpha1
 kind: Terraform
 metadata:
   name: helloworld-tf
+  namespace: test
 spec:
   path: ./terraform
   approvePlan: ""
