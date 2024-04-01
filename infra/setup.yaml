@@ -1,10 +1,9 @@
-
 ---
 apiVersion: source.toolkit.fluxcd.io/v1beta1
 kind: GitRepository
 metadata:
   name: helloworld
-  namespace: flux-system
+  namespace: dev
 spec:
   interval: 1m
   url: ssh://github.com/kovpe/tf-controller-helloworld
@@ -17,7 +16,7 @@ apiVersion: infra.contrib.fluxcd.io/v1alpha1
 kind: Terraform
 metadata:
   name: helloworld
-  namespace: flux-system
+  namespace: dev
 spec:
   path: ./terraform
   approvePlan: auto
@@ -25,6 +24,6 @@ spec:
   sourceRef:
     kind: GitRepository
     name: helloworld
-    namespace: flux-system
+    namespace: dev
   writeOutputsToSecret:
     name: helloworld-outputs
